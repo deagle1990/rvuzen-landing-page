@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Name - Simplify Your Life</title>
+    <title>RVU Zen - wRVU Tracker for Clinicians</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
@@ -14,13 +14,28 @@
             background-color: #f8fafc; /* Slate 50 */
         }
         .app-gradient {
-            background: linear-gradient(135deg, #4f46e5 0%, #a78bfa 100%); /* Indigo to Violet */
+            /* New: Professional Blue/Indigo gradient */
+            background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%); /* Blue-600 to Indigo-600 */
+        }
+        .text-accent, .hover\:text-accent:hover {
+            color: #2563eb; /* Blue 600 */
         }
         .mockup-shadow {
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
         }
         /* Custom scroll behavior for navigation links */
         html { scroll-behavior: smooth; }
+
+        /* Ensure scrollable screens section looks great */
+        .snap-x {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+        .snap-x::-webkit-scrollbar {
+            display: none; /* Chrome and Safari */
+        }
     </style>
 </head>
 <body class="text-gray-800">
@@ -28,16 +43,17 @@
     <!-- Header & Navigation -->
     <header class="sticky top-0 z-50 bg-white shadow-md">
         <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-indigo-600">
-                <a href="#top">App Name</a>
+            <h1 class="text-2xl font-bold text-blue-600">
+                <a href="#top">RVU Zen</a>
             </h1>
             <div class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#features" class="text-gray-600 hover:text-indigo-600 transition duration-150">Features</a>
-                <a href="#screens" class="text-gray-600 hover:text-indigo-600 transition duration-150">Screenshots</a>
-                <a href="#faq" class="text-gray-600 hover:text-indigo-600 transition duration-150">FAQ</a>
-                <a href="#about" class="text-gray-600 hover:text-indigo-600 transition duration-150">About</a>
+                <a href="#features" class="text-gray-600 hover:text-blue-600 transition duration-150">Features</a>
+                <a href="#screens" class="text-gray-600 hover:text-blue-600 transition duration-150">Screenshots</a>
+                <a href="#faq" class="text-gray-600 hover:text-blue-600 transition duration-150">FAQ</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-150">About</a>
             </div>
-            <a href="PLACEHOLDER_APP_STORE_LINK" target="_blank" class="md:hidden text-indigo-600 hover:text-indigo-500 font-semibold transition duration-150">Get App</a>
+            <!-- CTA for mobile menu -->
+            <a href="PLACEHOLDER_APP_STORE_LINK" target="_blank" class="md:hidden text-blue-600 hover:text-blue-500 font-semibold transition duration-150">Get App</a>
         </nav>
     </header>
 
@@ -46,22 +62,23 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="max-w-3xl mx-auto">
                 <h2 class="text-4xl sm:text-6xl font-extrabold leading-tight mb-4">
-                    Finally, <span class="text-indigo-200">Simplify</span> Your Daily Routine
+                    Finally, Take Back Control of Your <span class="text-blue-200">wRVUs</span>
                 </h2>
                 <p class="text-xl sm:text-2xl font-light mb-8 opacity-90">
-                    The only mobile app you need to manage your tasks, finances, and wellness in one beautiful interface.
+                    The clean, fast, and powerful wRVU tracker built by clinicians, for clinicians.
                 </p>
 
                 <!-- CTA Button -->
-                <a href="PLACEHOLDER_APP_STORE_LINK" target="_blank" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-full text-indigo-600 bg-white shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105">
-                    Download on the App Store
+                <a href="PLACEHOLDER_APP_STORE_LINK" target="_blank" class="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-bold rounded-full text-blue-600 bg-white shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                    Download RVU Zen on the App Store
                 </a>
+                <p class="mt-4 text-sm text-blue-100 opacity-90">No subscription. No login. Completely free.</p>
             </div>
 
             <!-- Main Mockup Image -->
             <div class="mt-16 md:mt-20">
-                <!-- Placeholder for the main app screen -->
-                <img src="https://placehold.co/1080x2340/312e81/ffffff?text=App+Home+Screen+Mockup" alt="App Home Screen Mockup"
+                <!-- IMPORTANT: Upload your main screenshot as 'images/home.png' to your GitHub repo -->
+                <img src="images/home.png" onerror="this.onerror=null; this.src='https://placehold.co/1080x2340/1e3a8a/ffffff?text=RVU+Zen+Home+Screen';" alt="RVU Zen Home Screen Mockup"
                      class="mx-auto w-64 md:w-80 h-auto rounded-3xl mockup-shadow border-8 border-indigo-900/50 object-cover">
             </div>
         </div>
@@ -70,26 +87,45 @@
     <!-- Features Section -->
     <section id="features" class="py-20 md:py-28 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-3xl sm:text-4xl font-bold text-center mb-12">Powerful Features, Simple Design</h3>
+            <h3 class="text-3xl sm:text-4xl font-bold text-center mb-12">Why Clinicians Choose RVU Zen</h3>
 
-            <div class="grid md:grid-cols-3 gap-10">
-                <!-- Feature 1 -->
+            <!-- Feature Grid - now 6 items -->
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1: No Barriers -->
                 <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
-                    <div class="text-indigo-600 text-3xl mb-4">✨</div>
-                    <h4 class="text-xl font-semibold mb-2">Instant Sync</h4>
-                    <p class="text-gray-600">All your data updates across all your devices in real-time. Never lose track of progress again.</p>
+                    <div class="text-blue-600 text-3xl mb-4">🔓</div>
+                    <h4 class="text-xl font-semibold mb-2">No Barrier to Entry</h4>
+                    <p class="text-gray-600">Completely free, no subscription, no paywall, and no user login required. Everything works out of the box.</p>
                 </div>
-                <!-- Feature 2 -->
+                <!-- Feature 2: Instant Logging -->
                 <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
-                    <div class="text-indigo-600 text-3xl mb-4">🎨</div>
-                    <h4 class="text-xl font-semibold mb-2">Beautiful UX</h4>
-                    <p class="text-gray-600">Enjoy a clean, minimalist interface that makes complex tasks feel effortless and intuitive.</p>
+                    <div class="text-blue-600 text-3xl mb-4">⚡</div>
+                    <h4 class="text-xl font-semibold mb-2">Instant wRVU Logging</h4>
+                    <p class="text-gray-600">Add CPT codes in seconds using smart search, or quickly access your most-used procedures with favorites.</p>
                 </div>
-                <!-- Feature 3 -->
+                <!-- Feature 3: Analytics -->
                 <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
-                    <div class="text-indigo-600 text-3xl mb-4">🔒</div>
-                    <h4 class="text-xl font-semibold mb-2">Privacy First</h4>
-                    <p class="text-gray-600">Your security is our priority. We use end-to-end encryption to protect all your sensitive information.</p>
+                    <div class="text-blue-600 text-3xl mb-4">📈</div>
+                    <h4 class="text-xl font-semibold mb-2">Clear Analytics & Trends</h4>
+                    <p class="text-gray-600">Instantly view daily, weekly, monthly, or yearly totals for wRVUs, patient count, and associated earnings.</p>
+                </div>
+                <!-- Feature 4: Breakdown -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-blue-600 text-3xl mb-4">🔍</div>
+                    <h4 class="text-xl font-semibold mb-2">Day-by-Day Verification</h4>
+                    <p class="text-gray-600">Drill down into each day’s logs to verify accuracy, catch potential errors, and ensure correct reporting.</p>
+                </div>
+                <!-- Feature 5: CPT Backfill -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-blue-600 text-3xl mb-4">🔄</div>
+                    <h4 class="text-xl font-semibold mb-2">Automatic CPT Backfill</h4>
+                    <p class="text-gray-600">Our built-in code catalog uses the latest 2024–2025 AMA updates to guarantee accurate wRVU values.</p>
+                </div>
+                <!-- Feature 6: Secure Storage -->
+                <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
+                    <div class="text-blue-600 text-3xl mb-4">💾</div>
+                    <h4 class="text-xl font-semibold mb-2">Secure On-Device Storage</h4>
+                    <p class="text-gray-600">Your protected clinical data stays entirely on your device. It is never uploaded to the cloud or shared.</p>
                 </div>
             </div>
         </div>
@@ -98,61 +134,61 @@
     <!-- Screen Showcase Section (Scrollable examples) -->
     <section id="screens" class="py-20 md:py-28 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-3xl sm:text-4xl font-bold text-center mb-12">A Peek Inside the App</h3>
+            <h3 class="text-3xl sm:text-4xl font-bold text-center mb-12">Clear. Simple. Accurate.</h3>
 
             <div class="flex space-x-6 overflow-x-auto pb-6 snap-x snap-mandatory">
-                <!-- Screen 1: Tasks List -->
+                <!-- Screen 1: Tasks List - Upload as images/screen1.png -->
                 <div class="flex-shrink-0 w-64 snap-center">
-                    <img src="https://placehold.co/1080x2340/1f2937/ffffff?text=Screen+1%3A+Task+List" alt="Task List Screen"
+                    <img src="images/screen1.png" onerror="this.onerror=null; this.src='https://placehold.co/1080x2340/1f2937/ffffff?text=Upload+screen1.png';" alt="Instant wRVU Logging Screen"
                          class="rounded-3xl mockup-shadow border-4 border-gray-300">
-                    <p class="text-center mt-3 text-sm font-medium text-gray-600">Track tasks easily.</p>
+                    <p class="text-center mt-3 text-sm font-medium text-gray-600">Instant wRVU Logging.</p>
                 </div>
 
-                <!-- Screen 2: Analytics Dashboard -->
+                <!-- Screen 2: Analytics Dashboard - Upload as images/screen2.png -->
                 <div class="flex-shrink-0 w-64 snap-center">
-                    <img src="https://placehold.co/1080x2340/374151/ffffff?text=Screen+2%3A+Analytics" alt="Analytics Screen"
+                    <img src="images/screen2.png" onerror="this.onerror=null; this.src='https://placehold.co/1080x2340/374151/ffffff?text=Upload+screen2.png';" alt="Analytics Dashboard Screen"
                          class="rounded-3xl mockup-shadow border-4 border-gray-300">
-                    <p class="text-center mt-3 text-sm font-medium text-gray-600">Visualize your progress.</p>
+                    <p class="text-center mt-3 text-sm font-medium text-gray-600">Visualize productivity trends.</p>
                 </div>
 
-                <!-- Screen 3: Settings/Profile -->
+                <!-- Screen 3: Day-by-Day Breakdown - Upload as images/screen3.png -->
                 <div class="flex-shrink-0 w-64 snap-center">
-                    <img src="https://placehold.co/1080x2340/4b5563/ffffff?text=Screen+3%3A+Settings" alt="Settings Screen"
+                    <img src="images/screen3.png" onerror="this.onerror=null; this.src='https://placehold.co/1080x2340/4b5563/ffffff?text=Upload+screen3.png';" alt="Day-by-Day Breakdown Screen"
                          class="rounded-3xl mockup-shadow border-4 border-gray-300">
-                    <p class="text-center mt-3 text-sm font-medium text-gray-600">Personalize your experience.</p>
+                    <p class="text-center mt-3 text-sm font-medium text-gray-600">Drill down into daily logs.</p>
                 </div>
 
-                <!-- Screen 4: Calendar View -->
+                <!-- Screen 4: Export View - Upload as images/screen4.png -->
                 <div class="flex-shrink-0 w-64 snap-center">
-                    <img src="https://placehold.co/1080x2340/6b7280/ffffff?text=Screen+4%3A+Calendar" alt="Calendar Screen"
+                    <img src="images/screen4.png" onerror="this.onerror=null; this.src='https://placehold.co/1080x2340/6b7280/ffffff?text=Upload+screen4.png';" alt="Data Export Screen"
                          class="rounded-3xl mockup-shadow border-4 border-gray-300">
-                    <p class="text-center mt-3 text-sm font-medium text-gray-600">Manage your schedule.</p>
+                    <p class="text-center mt-3 text-sm font-medium text-gray-600">PDF export your data anytime.</p>
                 </div>
             </div>
-            <p class="text-center mt-8 text-sm text-gray-500 italic">← Scroll horizontally to see more screens →</p>
+            <p class="text-center mt-8 text-sm text-gray-500 italic">← Scroll horizontally to see more screens → (Make sure to replace these placeholders!)</p>
         </div>
     </section>
 
     <!-- FAQ Section -->
     <section id="faq" class="py-20 md:py-28 bg-white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-3xl sm:text-4xl font-bold text-center mb-12">Frequently Asked Questions</h3>
+            <h3 class="text-3xl sm:text-4xl font-bold text-center mb-12">Common Questions for Clinicians</h3>
 
             <div class="space-y-6">
-                <!-- FAQ Item 1 -->
+                <!-- FAQ Item 1: Pricing -->
                 <div class="p-4 border-b border-gray-200">
-                    <h4 class="font-semibold text-xl text-indigo-600 mb-1">Is this app free to download?</h4>
-                    <p class="text-gray-700">Yes, the app is free to download and offers a fully functional basic mode. We offer an optional premium subscription for advanced features.</p>
+                    <h4 class="font-semibold text-xl text-blue-600 mb-1">Is there a subscription or cost to use RVU Zen?</h4>
+                    <p class="text-gray-700">No. RVU Zen is built to be a completely free tool for the clinical community. There are no subscriptions, no paywalls, and zero advertisements.</p>
                 </div>
-                <!-- FAQ Item 2 -->
+                <!-- FAQ Item 2: Data Security -->
                 <div class="p-4 border-b border-gray-200">
-                    <h4 class="font-semibold text-xl text-indigo-600 mb-1">What devices does the app support?</h4>
-                    <p class="text-gray-700">Currently, the app is available exclusively on the Apple App Store for iPhone and iPad. Android support is planned for a future release!</p>
+                    <h4 class="font-semibold text-xl text-blue-600 mb-1">Where is my sensitive wRVU data stored?</h4>
+                    <p class="text-gray-700">For maximum security and privacy, your data is stored entirely on your device. It is never uploaded, tracked, or shared with us or any third party.</p>
                 </div>
-                <!-- FAQ Item 3 -->
+                <!-- FAQ Item 3: CPT Updates -->
                 <div class="p-4">
-                    <h4 class="font-semibold text-xl text-indigo-600 mb-1">How can I suggest a new feature?</h4>
-                    <p class="text-gray-700">We love hearing your ideas! Please visit the 'Support' section in the app settings to send us your feedback and feature requests directly.</p>
+                    <h4 class="font-semibold text-xl text-blue-600 mb-1">Does RVU Zen use the latest CPT code and wRVU values?</h4>
+                    <p class="text-gray-700">Yes. The app includes an automatic CPT backfill with the most current 2024–2025 AMA updates to ensure your compensation tracking is always accurate.</p>
                 </div>
             </div>
         </div>
@@ -161,22 +197,22 @@
     <!-- Footer / About Section -->
     <footer id="about" class="bg-gray-800 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h4 class="text-2xl font-bold mb-3">App Name</h4>
+            <h4 class="text-2xl font-bold mb-3">RVU Zen</h4>
             <p class="text-gray-400 max-w-2xl mx-auto mb-8">
-                Built with care to help you achieve more by doing less. We believe in powerful tools that are simple to use.
+                Built by a physician, for clinicians. We help MDs, DOs, NPs, PAs, and specialists monitor productivity, verify compensation, and take control of their income and workload.
             </p>
             <div class="flex justify-center space-x-6 text-sm mb-6">
-                <a href="#features" class="hover:text-indigo-400 transition">Features</a>
-                <a href="mailto:support@appname.com" class="hover:text-indigo-400 transition">Contact Us</a>
-                <a href="#" class="hover:text-indigo-400 transition">Privacy Policy</a>
+                <a href="#features" class="hover:text-blue-400 transition">Features</a>
+                <a href="mailto:support@rvuzen.com" class="hover:text-blue-400 transition">Contact Support</a>
+                <a href="#" class="hover:text-blue-400 transition">Privacy Policy</a>
             </div>
             
             <!-- Final CTA -->
-            <a href="PLACEHOLDER_APP_STORE_LINK" target="_blank" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-bold rounded-full text-white bg-indigo-600 shadow-lg hover:bg-indigo-700 transition duration-300">
-                Get App Name Today
+            <a href="PLACEHOLDER_APP_STORE_LINK" target="_blank" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-bold rounded-full text-white bg-blue-600 shadow-lg hover:bg-blue-700 transition duration-300">
+                Download RVU Zen Today
             </a>
 
-            <p class="mt-8 text-xs text-gray-500">&copy; 2025 App Name. All rights reserved.</p>
+            <p class="mt-8 text-xs text-gray-500">&copy; 2025 RVU Zen. All rights reserved.</p>
         </div>
     </footer>
 
